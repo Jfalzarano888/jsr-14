@@ -15,22 +15,70 @@
     body {
       background: url("https://camo.githubusercontent.com/b281af2e6943ff9afff0d153b835df8bb6dbfadd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f662e636c2e6c792f6974656d732f316d327233593241324a32533271324e303430762f496d616765253230323031352d31312d32312532306174253230362e35392e3534253230504d2e706e67") no-repeat;
       background-size: cover;
+      font-size: 16px;
     }
     .animal {
-      height: 100px;
       width: 100px;
-      position: absolute;
-      bottom: 100px;
       cursor: pointer;
       background-size: cover;
       background-position: center;
+      float: left;
+      margin: 2rem;
+      padding-bottom: 2rem;
     }
+    figcaption {
+      color: white;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 3.25rem;
+    }
+    .animal-container {
+      min-width: 70rem;
+      max-width: 50rem;
+      margin: 40rem auto;
+      background-color: rgba(255, 0, 0, 0.4);
+      border-radius: 5rem;
+    }
+    .clearfix:after {
+      clear: both;
+      content: " ";
+      display: block;
+      font-size: 0;
+      height: 0;
+      visibility: hidden;
+    }
+
   </style>
   <!-- js -->
 </head>
 <body>
-
-  <div class="container-fluid farm"></div>
+  <section class ="animal-container clearfix">
+    <div class="animal">
+      <figure class="chicken">
+        <figcaption>Chicken</figcaption>
+      </figure>
+    </div>
+    <div class="animal">
+      <figure class="horse">
+        <figcaption>Horse</figcaption>
+      </figure>
+    </div>
+    <div class="animal">
+      <figure class="pig">
+        <figcaption>Pig</figcaption>
+      </figure>
+    </div>
+    <div class="animal">
+      <figure class="cow">
+        <figcaption>Cow</figcaption>
+      </figure>
+    </div>
+    <div class="animal">
+      <figure class="bunny">
+        <figcaption>Bunny</figcaption>
+      </figure>
+    </div>
+  </section>
   <script src="app.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ var imgs = ["http://cookdiary.net/wp-content/uploads/images/Cooked_Chicken.jpg",
 var chicken = new farmAnimal ("chicken", imgs[0], "bok bok", "fly", 2);
 var horse = new farmAnimal ("horse", imgs[1], "neiiiighhhh", "walk or run", 4);
 var pig = new farmAnimal ("pig", imgs[2], "oink oink", "scurry", 4);
-var bunny = new farmAnimal ("bunny", imgs[3], "can't speak", "hop", 4);
+var bunny = new farmAnimal ("bunny", imgs[3], "nothing", "hop", 4);
 var cow = new farmAnimal ("cow", imgs[4], "mooooooo", "walk mostly", 4, "tan");
 var jerseyCow = new jerseyCow ("cow", imgs[4], "moo", "walk", 4, "tan");
 var texasLonghorn = new texasLonghorn ("cow", imgs[4], "moo", "walk", 4, "red and white");
@@ -19,7 +19,10 @@ function farmAnimal (animalType, img, talk, modeOfMovement, legs) {
   this.animalType = animalType;
   this.img = img;
   this.talk = function() {
-  	return alert("The " + name + " says " + talk + "!");
+  	return alert("The " + animalType + " says " + talk + "!");
+    if (this.talk === "can't speak") {
+      return alert("The " + animalType + " does not talk!");
+    }
   };
   this.modeOfMovement = modeOfMovement;
   this.legs = legs;
@@ -50,3 +53,34 @@ texasLonghorn.prototype.SpecialCharacteristic = "Two Long Horns";
 
 //console.log(cow.img);
 console.log(horse.img);
+
+
+$('.chicken').append("<img id=chicken height=100 width=100  src='" + chicken.img + "'/>");
+$('.horse').append("<img  id=horse height=100 width=100  src='" + horse.img + "'/>");
+$('.pig').append("<img id=pig height=100 width=100   src='" + pig.img + "'/>");
+$('.cow').append("<img id=cow height=100 width=100   src='" + cow.img + "'/>");
+$('.bunny').append("<img id=bunny height=100 width=100   src='" + bunny.img + "'/>");
+
+$( ".animal" ).click(function() {
+  //alert("I've been clicked");
+  let imgs = $(this).find('img').attr('Id')
+  let response = "";
+  switch (imgs) {
+    case "chicken":
+      response = chicken.talk();
+      break;
+    case "horse":
+      response = horse.talk();
+      break;
+    case "pig":
+      response = pig.talk();
+      break;
+    case "cow":
+      response = cow.talk();
+      break;
+    case "bunny":
+      response = bunny.talk();
+      break;
+  }
+  return console.log(response);
+});
