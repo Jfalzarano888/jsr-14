@@ -6,13 +6,7 @@ Use vanilla JS or jQuery to create elements based off your FarmAnimal objects an
 When you click on animal an alert should show display the sound it makes (i.e. mooo!)
 Each animal element should have position styles, such as left and top, so images aren't stacked */
 
-var imgs = [
-  "http://cookdiary.net/wp-content/uploads/images/Cooked_Chicken.jpg",
-  "http://mancunion.com/wp-content/uploads/2013/02/photo-500x375.jpg",
-  "http://swansonnatural.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/a/bacon_plate.png",
-  "http://www.fictionalfood.net/wp-content/uploads/2011/07/110724-Roasted-Rabbit1.jpg",
-  "http://3.bp.blogspot.com/-I8u2zIqdQ3Q/VSbwwjWFLLI/AAAAAAAADdk/8NeaXe23iJo/s1600/A-chunk-of-beef-2.jpg"
-];
+
 
 function FarmAnimal(animalType, img, message, modeOfMovement, legs) {
   this.animalType = animalType;
@@ -51,6 +45,13 @@ TexasLonghorn.prototype.origin = "Texas WOOOOOO";
 TexasLonghorn.prototype.SpecialCharacteristic = "Two Long Horns";
 
 //texasLonghorn.specialMessage();
+var imgs = [
+  "http://cookdiary.net/wp-content/uploads/images/Cooked_Chicken.jpg",
+  "http://mancunion.com/wp-content/uploads/2013/02/photo-500x375.jpg",
+  "http://swansonnatural.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/a/bacon_plate.png",
+  "http://www.fictionalfood.net/wp-content/uploads/2011/07/110724-Roasted-Rabbit1.jpg",
+  "http://3.bp.blogspot.com/-I8u2zIqdQ3Q/VSbwwjWFLLI/AAAAAAAADdk/8NeaXe23iJo/s1600/A-chunk-of-beef-2.jpg"
+];
 var chicken = new FarmAnimal("chicken", imgs[0], "bok bok", "fly", 2);
 var horse = new FarmAnimal("horse", imgs[1], "neiiiighhhh", "walk or run", 4);
 var pig = new FarmAnimal("pig", imgs[2], "oink oink", "scurry", 4);
