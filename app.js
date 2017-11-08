@@ -25,12 +25,12 @@ function FarmAnimal(animalType, img, message, modeOfMovement, legs) {
   this.legs = legs;
 }
 
-function jerseyCow(animalType, img, message, modeOfMovement, legs, color) {
+function JerseyCow(animalType, img, message, modeOfMovement, legs, color) {
   FarmAnimal.call(this, animalType, img, message, modeOfMovement, legs);
   this.color = color;
 }
 
-function texasLonghorn(animalType, img, message, modeOfMovement, legs, color) {
+function TexasLonghorn(animalType, img, message, modeOfMovement, legs, color) {
   FarmAnimal.call(this, animalType, img, message, modeOfMovement, legs);
   this.color = color;
   this.specialMessage = function() {
@@ -38,26 +38,28 @@ function texasLonghorn(animalType, img, message, modeOfMovement, legs, color) {
   };
 }
 
-jerseyCow.prototype = Object.create(FarmAnimal.prototype);
-jerseyCow.prototype.construtor = jerseyCow;
+JerseyCow.prototype = Object.create(FarmAnimal.prototype);
+JerseyCow.prototype.construtor = JerseyCow;
 
-jerseyCow.prototype.origin = "British Channel Island of Jersey";
-jerseyCow.prototype.SpecialCharacteristic = "High fertility";
+JerseyCow.prototype.origin = "British Channel Island of Jersey";
+JerseyCow.prototype.SpecialCharacteristic = "High fertility";
 
-texasLonghorn.prototype = Object.create(FarmAnimal.prototype);
-texasLonghorn.prototype.construtor = texasLonghorn;
+TexasLonghorn.prototype = Object.create(FarmAnimal.prototype);
+TexasLonghorn.prototype.construtor = TexasLonghorn;
 
-texasLonghorn.prototype.origin = "Texas WOOOOOO";
-texasLonghorn.prototype.SpecialCharacteristic = "Two Long Horns";
+TexasLonghorn.prototype.origin = "Texas WOOOOOO";
+TexasLonghorn.prototype.SpecialCharacteristic = "Two Long Horns";
 
 //texasLonghorn.specialMessage();
 var chicken = new FarmAnimal("chicken", imgs[0], "bok bok", "fly", 2);
 var horse = new FarmAnimal("horse", imgs[1], "neiiiighhhh", "walk or run", 4);
 var pig = new FarmAnimal("pig", imgs[2], "oink oink", "scurry", 4);
 var bunny = new FarmAnimal("bunny", imgs[3], "nothing", "hop", 4);
-var cow = new FarmAnimal("cow", imgs[4], "mooooooo", "walk mostly", 4, "tan");
-var NjCow = new FarmAnimal("cow", imgs[4], "moo", "walk", 4, "tan");
+var cow = new FarmAnimal("cow", imgs[4], "mooooooo", "walk mostly", 4);
+var NjCow = new JerseyCow("cow", imgs[4], "moo", "walk", 4, "tan");
+//var TxCow = new FarmAnimal("cow", imgs[4], "moo", "walk", 4, "red and white");
 
+console.log(NjCow);
 
 var allAnimals = [chicken, horse, pig, bunny, cow];
 
@@ -81,7 +83,7 @@ function render(arr) {
 $(".animal-container").append(render(allAnimals));
 
 $(".animal").click(function() {
-  //alert("I've been clicked");
+
   let imgs = $(this)
     .find("img")
     .attr("Id");
